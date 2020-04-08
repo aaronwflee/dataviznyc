@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Who can work from home?</title>
+		<script type="text/javascript" src="../resources/d3.js"></script>
+		<style type="text/css">
+			body {
+                margin:0 auto;
+                width:800px;
+            }
+		</style>
+	</head>
+	<body>
+
+        <h1>Who can work from home?</h1>
+
+        <p>
+        There's no other way to put it. Covid-19 is a global pandemic that has and will continue to take many lives.
+        Any numbers reported here will likely be outdated by the time this page is refreshed, and there are plenty of 
+        fantastic reports by folks at 
+        <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html">New York Times</a>,
+        <a href="https://coronavirus.jhu.edu/map.html">Johns Hopkins</a>,
+        <a href="https://covidactnow.org/us/ny/county/new_york_county">Covid ActNow</a>, and
+        <a href="https://datausa.io/coronavirus">DataUSA</a>.
+        </p>
+    
+        <p>
+        In addition to the hospitalizations and deaths, this pandemic has also resulted in daily life coming to a standstill.
+        Non-essential businesses in many cities (including New York) have been ordered to close, universities and schools have transitioned to 
+        online learning, and many workers have moved to working from home. 
+        Do we all have the same luxury of using Zoom's custom backgrounds as comedic material, though?
+        </p>
+        
+        <p>
+        Nationally, around <a href="https://www.bls.gov/news.release/atus.t06.htm">25% of workers</a> are <i>able to work from home</i>. 
+        As we might suspect, however, this number is not randomly distributed.
+
+        Let's first look at what proportion of New Yorkers are able to work from home, and compare that to the rest of the country,
+        but grouping respondents by the size of their city. Specifically, whether the cities were the central city in a metropolitan area
+        (like New York), or were a noncentral metropolitan city (like Newark), or rural (i.e. not part of any metropolitan areas).
+        </p>
+<!--         
+        <div id="chart">
+            <script id="metro" filename="../resources/wfh/wfh_metro.csv" type="text/javascript" src="single_bar.js"></script>
+        </div>
+             -->
+            
+        <p>
+        While the majority of New Yorkers were not able to work from home, the proportion who can is still higher than the national average,
+        and in line with the metropolitan city numbers. Let's take a closer look, however, and see if all boroughs are the same.
+        </p>
+
+        
+        <div id="chart"> 
+            <script id="metro" filename="../resources/wfh/wfh_metro.csv" type="text/javascript" src="single_bar.js"></script>
+        </div>
+
+        <p>
+            Let's look at other ways of breaking NYC down.
+        </p>
+
+
+        <div id="groupedchart">
+
+            <b>Percent of people <font color="darkgray"> nationally </font> and <font color="#003884">in NYC</font> able to work from home, by  </b>        
+            <select id="breakdown" name="CATEGORY">
+                <option value="Age">Age</option>
+                <option value="Race/Ethnicity">Race/Ethnicity</option>
+                <option value="Sex">Sex</option>
+                <option value="Education">Education</option>
+                <option value="Citizenship">Citizenship</option>
+            
+            <script id="grouped" filename="../resources/wfh/wfh_percentages_sorted.csv" type="text/javascript" src="grouped_bar.js"></script>
+        </div>
+
+
+        <p>
+        We can see that those without college degrees are highly unlikely to able to work from home.
+        We can see that those without college degrees are highly unlikely to able to work from home.
+        We can see that those without college degrees are highly unlikely to able to work from home.
+        </p>
+        
+        
+        
+        
+         
+	</body>
+</html>
