@@ -8,7 +8,7 @@ var margin = 20;
 var colors = ["#676867", "#909090", "#BCBCBC", "#003785", "#003785", "#2D6BB5", "#5798DA", "#91C6F2", "#C7E4F8"]
 
 
-d3.csv("../data/wfh/metro.csv", //filename, 
+d3.csv(filename, 
 function(d) {return {GROUP:d.GROUP.replace('Metropolitan', 'Metro'), VAL:parseFloat(d.PCT_WFH)}}, 
 function(error, data) {
 
