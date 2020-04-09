@@ -1,90 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script type="text/javascript" src="d3.js"></script>
+  <head>
+    <title>dataviz.nyc</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>d3 Examples</title>
-</head>
-<body>
-
-<header>
-    <div class="container">
-        <div class="row">
-                <div class="btn-group btn-group-md" role="group" aria-label="...">
-                    <a href="index.html" class="btn btn-default" role="button">Home</a>
-                    <a href="test.html" class="btn btn-default" role="button">Scatter</a>
-                </div>
-            </div>
+    <link rel="stylesheet" href="../resources/css/animate.css">
+    <link rel="stylesheet" href="../resources/css/icomoon.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+  </head>
+  <body>
+    
+	  <!-- <nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+          <a class="navbar-brand" href="index.html">dataviz.<font color="#f58426">nyc</font></a>
+	      </div>
+	    </div>
+	  </nav> -->
+    <!-- END nav -->
+    
+    <div class="hero-wrap js-fullheight" style="background-image: url('../resources/osman-rana.jpg');" data-stellar-background-ratio="0.1">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+          <div class="col-md-12 ftco-animate">
+          	<!-- <h2 class="subheading">Welcome to</h2> -->
+          	<h1 class="mb-4 mb-md-0">dataviz.nyc</h1>
+          	<div class="row">
+          		<div class="col-md-7">
+          			<div class="text">
+	          			<p>looking at New York City one data visualization at a time</p>
+	          			<div class="mouse">
+										<a href="#" class="mouse-icon">
+											<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+										</a>
+									</div>
+								</div>
+          		</div>
+          	</div>
+          </div>
         </div>
-    </div>
-</header>
-
-<div class="container">
-    <h3>Data Driven Documents</h3>
-    <p>D3 allows document elements to be generated from data. Hence the name Data Driven Documents (D3).</p>
-    <p>In the example below, and array of json key-value pairs are rendered as headings and paragraphs. We append a div
-    for each data item, and then within that div we render a heading for the key and a paragraph for the value.</p>
-
-    <div class="col-md-6">
-        <div id="draw_here"></div>
+      </div>
     </div>
 
-    <div class="col-md-6">
-<pre>
-    data = [
-        {"key": "First Heading", "value":"First Paragraph"},
-        {"key": "Second Heading", "value":"Second Paragraph"},
-        {"key": "Third Heading", "value":"Third Paragraph"},
-        {"key": "Fourth Heading", "value":"Fourth Paragraph"},
-        {"key": "Fifth Heading", "value":"Fifth Paragraph"},
-    ];
+   	<section class="ftco-section">
+   		<div class="container">
+   			<div class="row">
+   				<div class="col-md-12">
+   					<div class="case">
+   						<div class="row">
+   							<div class="col-md-6 col-lg-6 col-xl-8 d-flex">
+   								<a href="work_from_home.html" class="img w-100 mb-3 mb-md-0" style="background-image: url(../resources/wfh/wfh_preview.gif);"></a>
+   							</div>
+   							<div class="col-md-6 col-lg-6 col-xl-4 d-flex">
+   								<div class="text w-100 pl-md-3">
+   									<span class="subheading">PEOPLE</span>
+   									<h2><a href="work_from_home.html">Who Can Work From Home?</a></h2>
+   								<ul class="media-social list-unstyled">
+			                        <li class="ftco-animate"><a href="https://twitter.com/intent/tweet?text=Interactive%20visualization%20of%20who%20can%20and%20can't%20work%20from%20home%20in%20NYC%20and%20the%20rest%20of%20the%20US%20dataviz.nyc/work-from-home"><span class="icon-twitter"></span></a></li>
+			                    </ul>
+                                <div class="meta">
+                                    <p class="mb-0">4/7/2020</p>
+                                </div>
+   								</div>
+   							</div>
+   						</div>
+   					</div>
+   					
+   				</div>
+   			</div>
+   			<!-- <div class="row mt-5">
+          <div class="col text-center">
+            <div class="block-27">
+              <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><span>1</span></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+   		</div>
+   	</section>
 
-    //Create SVG element
-    var doc = d3.select("#draw_here");
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+          <div class="col-md-12 text-center">
 
-    var doc_item = doc.selectAll("div")
-            .data(data)
-            .enter()
-            .append("div");
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
 
-    doc_item.append("h4").text(function (d) {
-                return d.key;
-            });
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-    doc_item.append("p").text(function (d) {
-        return d.value;
-    })
-</pre>
-    </div>
-</div>
 
-<script>
-    data = [
-        {"key": "First Heading", "value":"First Paragraph"},
-        {"key": "Second Heading", "value":"Second Paragraph"},
-        {"key": "Third Heading", "value":"Third Paragraph"},
-        {"key": "Fourth Heading", "value":"Fourth Paragraph"},
-        {"key": "Fifth Heading", "value":"Fifth Paragraph"},
-    ];
-
-    //Create SVG element
-    var doc = d3.select("#draw_here");
-
-    var doc_item = doc.selectAll("div")
-            .data(data)
-            .enter()
-            .append("div");
-
-    doc_item.append("h4").text(function (d) {
-                return d.key;
-            });
-
-    doc_item.append("p").text(function (d) {
-        return d.value;
-    })
-</script>
-
-</body>
+  <script src="../resources/js/jquery.min.js"></script>
+  <script src="../resources/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../resources/js/jquery.easing.1.3.js"></script>  
+  <script src="../resources/js/jquery.stellar.min.js"></script>
+  <script src="../resources/js/aos.js"></script>
+  <script src="../resources/js/owl.carousel.min.js"></script>
+  <script src="../resources/js/jquery.animateNumber.min.js"></script>
+  <script src="../resources/js/jquery.waypoints.min.js"></script>
+  <script src="../resources/js/scrollax.min.js"></script>
+  <script src="../resources/js/main.js"></script>
+    
+  </body>
 </html>
