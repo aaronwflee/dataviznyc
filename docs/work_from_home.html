@@ -1,86 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
+        <meta charset="utf-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+        <link rel="stylesheet" href="../resources/css/style.css">
+
 		<title>Who can work from home?</title>
-		<script type="text/javascript" src="../resources/d3.js"></script>
+        <script type="text/javascript" src="../resources/d3.js"></script>
+        
 		<style type="text/css">
 			body {
                 margin:0 auto;
-                width:800px;
+                width:650px;
             }
+            .svg-container {
+                display: inline-block;
+                position: relative;
+                width: 100%;
+                padding-bottom: 100%;
+                vertical-align: top;
+                overflow: hidden;
+            }
+            .svg-content {
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .grid line {
+                stroke: white;
+                stroke-opacity: 1;
+                shape-rendering: crispEdges;
+            }
+            a { color: #003884; }
 		</style>
 	</head>
 	<body>
 
-        <h1>Who can work from home?</h1>
+        <nav class="navbar px-md-0 navbar-expand-lg ftco-navbar-light" id="ftco-navbar">
+            <div class="container">
+              <a class="navbar-brand" href="index.html"><font color="003884">dataviz.</font><font color="#f58426">nyc</font></a>
+              <div class="collapse navbar-collapse" id="ftco-nav">
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <h2>Who can work from home?</h2>
 
         <p>
-        There's no other way to put it. Covid-19 is a global pandemic that has and will continue to take many lives.
-        Any numbers reported here will likely be outdated by the time this page is refreshed, and there are plenty of 
-        fantastic reports by folks at 
-        <a href="https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html">New York Times</a>,
-        <a href="https://coronavirus.jhu.edu/map.html">Johns Hopkins</a>,
-        <a href="https://covidactnow.org/us/ny/county/new_york_county">Covid ActNow</a>, and
-        <a href="https://datausa.io/coronavirus">DataUSA</a>.
-        </p>
-    
-        <p>
-        In addition to the hospitalizations and deaths, this pandemic has also resulted in daily life coming to a standstill.
-        Non-essential businesses in many cities (including New York) have been ordered to close, universities and schools have transitioned to 
-        online learning, and many workers have moved to working from home. 
-        Do we all have the same luxury of using Zoom's custom backgrounds as comedic material, though?
+            There's no other way to put it. Covid-19 is a global pandemic that has and will continue to take many lives. 
+            In addition to the hospitalizations and deaths, this pandemic has also resulted in daily life coming to a standstill.
+            Non-essential businesses have been ordered to close, universities and schools have transitioned to online learning, 
+            and many workers have moved to working from home.  But do we all have the same luxury?
         </p>
         
         <p>
-        Nationally, around <a href="https://www.bls.gov/news.release/atus.t06.htm">25% of workers</a> are <i>able to work from home</i>. 
-        As we might suspect, however, this number is not randomly distributed.
-
-        Let's first look at what proportion of New Yorkers are able to work from home, and compare that to the rest of the country,
-        but grouping respondents by the size of their city. Specifically, whether the cities were the central city in a metropolitan area
-        (like New York), or were a noncentral metropolitan city (like Newark), or rural (i.e. not part of any metropolitan areas).
+            Nationally, around <a href="https://www.bls.gov/news.release/atus.t06.htm">25% of workers</a> are able to work from home. 
+            While this number has grown over time, they are still in the minority, and as we might suspect, not a random group. 
+            Those who live in metropolitan areas &mdash;whether a central city like New York or noncentral city like Westchester&mdash; 
+            are more than twice as likely (32% vs 15%) to be able to work from home than those in rural areas. 
         </p>
-<!--         
-        <div id="chart">
-            <script id="metro" filename="../resources/wfh/wfh_metro.csv" type="text/javascript" src="single_bar.js"></script>
-        </div>
-             -->
+
+        
+        <div id="metro"> 
+            <b>Percent of people able to work from home <font color="#999999"> nationally </font> 
+            and <font color="#003884"> in NYC </font>  <br> by metropolitan size | borough</b>
+            <script id="metrochart" filename="../data/wfh/metro.csv" type="text/javascript" src="../src/wfh/single_bar.js"></script>
             
-        <p>
-        While the majority of New Yorkers were not able to work from home, the proportion who can is still higher than the national average,
-        and in line with the metropolitan city numbers. Let's take a closer look, however, and see if all boroughs are the same.
-        </p>
-
-        
-        <div id="chart"> 
-            <script id="metro" filename="../resources/wfh/wfh_metro.csv" type="text/javascript" src="single_bar.js"></script>
         </div>
 
+        <br>
         <p>
-            Let's look at other ways of breaking NYC down.
+            New York City as a whole looks like other metropolitan areas, with 29% overall able to work from home. However, when we 
+            break this number down to the borough level, we see a similar metro-rural "inequality". While 33-36% of people 
+            in Manhattan and Brooklyn are able to work from home, only 20-26% in the other three boroughs have that same luxury. 
+            This puts them somewhere in between metropolitan and rural areas.
+            </p>
+
+        <p>
+            Let's look at other ways of segmenting the ability to work from home. The most obvious question to ask 
+            is whether the ability to work from home differs based on one's level of education.
+            This turns out to be true, and with a very significant difference. 
         </p>
 
 
-        <div id="groupedchart">
+        <div id="grouped">
 
-            <b>Percent of people <font color="darkgray"> nationally </font> and <font color="#003884">in NYC</font> able to work from home, by  </b>        
+            <b>Percent of people able to work from home<font color="#999999"> nationally </font> and <font color="#003884">in NYC</font> 
+            <br> by  </b>        
             <select id="breakdown" name="CATEGORY">
-                <option value="Age">Age</option>
-                <option value="Race/Ethnicity">Race/Ethnicity</option>
-                <option value="Sex">Sex</option>
+                
                 <option value="Education">Education</option>
+                <option value="Race/Ethnicity">Race/Ethnicity</option>
                 <option value="Citizenship">Citizenship</option>
+                <option value="Sex">Sex</option>
+                <option value="Age">Age</option>
+                
             
-            <script id="grouped" filename="../resources/wfh/wfh_percentages_sorted.csv" type="text/javascript" src="grouped_bar.js"></script>
+            <script id="groupedchart" filename="../data/wfh/wfh_percentages.csv" type="text/javascript" src="../src/wfh/grouped_bar.js"></script>
+            </select>
         </div>
-
+        
+        <br>
 
         <p>
-        We can see that those without college degrees are highly unlikely to able to work from home.
-        We can see that those without college degrees are highly unlikely to able to work from home.
-        We can see that those without college degrees are highly unlikely to able to work from home.
+            Explore these other demographic breakdowns. Race/ethnicity and citizenship status are other areas where the ability to work
+            from home is concentrated among certain groups. Importantly, the disparity in likelihood of being able to work from home between
+            white and other &mdash;particularly black and hispanic&mdash; races is even greater in New York City than the rest of the country. 
+            On the other hand, men and women have the same proportions in New York and the rest of the U.S.
+            able to work from home.
         </p>
         
+        <h4> The Dark Side of This</h4>
+        <p>
+            Disparities in one's ability to work from home means more than just not being able to use Zoom's custom backgrounds 
+            for comedic material while videoconferencing. Instead, it highlights who among us is not lucky enough to be quarantined at home. 
+            Not being able to work from home means having to continue using reduced-service (and hence more crammed) public transit, and
+            most likely having to come into contact with many more people, all of which increases one's risk of infection.
+        </p>
+
+        <p>
+            Is that what's happening here? Despite making up only 29% of Chicago's population, 
+            <a href="https://twitter.com/i/events/1247265775284441088">  "61 of their 86 recorded deaths, or 70%, were black residents"</a>. 
+            New York City's <a href="https://covid19tracker.health.ny.gov/views/NYS-COVID19-Tracker/NYSDOHCOVID-19Tracker-Fatalities?%3Aembed=yes&%3Atoolbar=no&%3Atabs=n#/views/NYS%2dCOVID19%2dTracker/NYSDOHCOVID%2d19Tracker%2dFatalities">
+            recently released data</a> also shows similar effects, although thankfully to a less extreme extent. Keeping in mind the old adage
+            that correlation does not equal correlation &mdash;factors like access to healthcare, for example, could be a confounding factor&mdash;
+            it is still important to acknowledge these systemic differences in order to correct them.
+        </p>    
+
+        <hr>
+
+        <small> 
+            Source: BLS American Time Use Survey 2017-2018 from <a href="https://www.atusdata.org/atus/index.shtml">IPUMS</a>. 
+            The true proportion of people who are able to work from home during Covid-19 is likely higher, as companies will have
+            attempted to adjust so that work previously seen as not able to be done remotely can now be.
+        </small>
+
         
         
         
